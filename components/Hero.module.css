@@ -1,0 +1,135 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 6rem 2rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 4rem;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.title {
+  font-size: 4.5rem;
+  line-height: 1.1;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.accent {
+  color: var(--accent-blue);
+  display: block;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+.actions {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.primaryBtn {
+  background: var(--accent-orange);
+  color: #000;
+  font-weight: 700;
+  padding: 1rem 2.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.primaryBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(255, 85, 0, 0.3);
+}
+
+.secondaryBtn {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--glass-border);
+  padding: 1rem 2.5rem;
+  font-weight: 600;
+  border-radius: 4px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all var(--transition-fast);
+}
+
+.secondaryBtn:hover {
+  background: var(--glass-bg);
+  border-color: var(--text-primary);
+}
+
+.imageWrapper {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+/* User requirement: "picture of girl moves up when the body part is over" */
+.image:hover {
+  transform: translateY(-20px);
+  box-shadow: 0 20px 40px rgba(0, 229, 255, 0.15);
+}
+
+.decorativeElement {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, var(--accent-blue) 0%, transparent 70%);
+  opacity: 0.1;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: blur(40px);
+}
+
+@media (max-width: 1024px) {
+  .title {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding-top: 8rem;
+    text-align: center;
+    gap: 3rem;
+  }
+  
+  .content {
+    align-items: center;
+  }
+  
+  .title {
+    font-size: 2.8rem;
+  }
+}
