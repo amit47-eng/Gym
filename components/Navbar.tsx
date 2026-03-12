@@ -6,6 +6,7 @@ import styles from './Navbar.module.css';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,17 +17,22 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
   return (
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.logo}>
         <span className={styles.logoAccent}>IRON</span>CORE
       </div>
       
-      <nav className={styles.nav}>
-        <Link href="/" className={styles.navLink}>Home</Link>
-        <Link href="/products" className={styles.navLink}>Products</Link>
-        <Link href="/company" className={styles.navLink}>Company</Link>
-        <Link href="/our-work" className={styles.navLink}>Our Work</Link>
+      <nav className={`${styles.nav} ${mobileMenuOpen ? styles.navOpen : ''}`}>
+        <Link href="/" className={styles.navLink} onClick={() => setMobileMenuOpen(false)}>Home</Link>
+        <Link href="/products" className={styles.navLink} onClick={() => setMobileMenuOpen(false)}>Products</Link>
+        <Link href="/company" className={styles.navLink} onClick={() => setMobileMenuOpen(false)}>Company</Link>
+        <Link href="/our-work" className={styles.navLink} onClick={() => setMobileMenuOpen(false)}>Our Work</Link>
+        <button className={`${styles.contactBtn} ${styles.mobileContactBtn}`}>Contact Us</button>
       </nav>
 
       <div className={styles.actions}>
@@ -36,7 +42,13 @@ export default function Navbar() {
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
         </button>
-        <button className={styles.contactBtn}>Contact Us</button>
+        <button className={`${styles.contactBtn} ${styles.desktopContactBtn}`}>Contact Us</button>
+        
+        <button className={styles.hamburgerBtn} onClick={toggleMobileMenu} aria-label="Menu">
+          <div className={`${styles.hamburgerLine} ${mobileMenuOpen ? styles.line1Open : ''}`}></div>
+          <div className={`${styles.hamburgerLine} ${mobileMenuOpen ? styles.line2Open : ''}`}></div>
+          <div className={`${styles.hamburgerLine} ${mobileMenuOpen ? styles.line3Open : ''}`}></div>
+        </button>
       </div>
     </header>
   );
