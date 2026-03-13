@@ -23,10 +23,11 @@ export default function Hero() {
         <div className={styles.decorativeElement}></div>
         {/* Placeholder image for development, replace with real asset or ai generated one later */}
         <img 
-          src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop" 
+          src="/hero_athlete.png" 
           alt="Fitness Athlete with Equipment" 
           className={styles.image}
         />
+
       </div>
     </section>
   );

@@ -1,0 +1,182 @@
+.section {
+  padding: 6rem 2rem;
+  background: linear-gradient(to bottom, #0a0a0c, #111115);
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.accent {
+  color: var(--accent-orange);
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  max-width: 500px;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.partItem {
+  padding: 1.5rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.partItem::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: var(--accent-orange);
+  transform: scaleY(0);
+  transition: transform var(--transition-fast);
+}
+
+.partItem:hover, .active {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 85, 0, 0.3);
+  transform: translateX(10px);
+}
+
+.partItem:hover::before, .active::before {
+  transform: scaleY(1);
+}
+
+.partLabel {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+  transition: color var(--transition-fast);
+}
+
+.active .partLabel {
+  color: var(--accent-orange);
+}
+
+.partDesc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all var(--transition-smooth);
+}
+
+.active .partDesc {
+  max-height: 100px;
+  opacity: 1;
+  margin-top: 0.5rem;
+}
+
+.visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
+
+.imageUp {
+  transform: translateY(-30px);
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  filter: grayscale(0.5);
+  transition: filter var(--transition-smooth);
+}
+
+.imageUp .image {
+  filter: grayscale(0);
+}
+
+.hotspot {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: var(--accent-orange);
+  border-radius: 50%;
+  box-shadow: 0 0 0 rgba(255, 85, 0, 0.4);
+  pointer-events: none;
+  opacity: 0.6;
+  transition: opacity var(--transition-fast);
+}
+
+.pulse {
+  opacity: 1;
+  animation: pulseAnimation 1.5s infinite;
+}
+
+@keyframes pulseAnimation {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 85, 0, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(255, 85, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 85, 0, 0);
+  }
+}
+
+/* Custom Hotspot Positions based on an athlete standing tall */
+.shouldersSpot { top: 20%; left: 50%; transform: translateX(-50%); }
+.armsSpot { top: 35%; left: 30%; }
+.coreSpot { top: 45%; left: 50%; transform: translateX(-50%); }
+.legsSpot { top: 70%; left: 50%; transform: translateX(-50%); }
+
+@media (max-width: 968px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .content {
+    order: 2;
+  }
+  
+  .visual {
+    order: 1;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+  }
+}
