@@ -1,0 +1,306 @@
+.section {
+  padding: 6rem 2rem;
+  background: linear-gradient(to bottom, #111115 0%, #0a0a0c 100%);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ─── Header ─── */
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--accent-orange);
+  background: rgba(255, 85, 0, 0.1);
+  border: 1px solid rgba(255, 85, 0, 0.2);
+  padding: 0.35rem 1rem;
+  border-radius: 100px;
+  margin-bottom: 1.25rem;
+}
+
+.title {
+  font-size: 3rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.accent {
+  color: var(--accent-orange);
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+/* ─── Filters ─── */
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.filterBtn {
+  padding: 0.5rem 1.4rem;
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  transition: all var(--transition-fast);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.filterBtn:hover {
+  color: var(--text-primary);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.filterActive {
+  background: var(--accent-orange);
+  border-color: var(--accent-orange);
+  color: #000;
+  font-weight: 700;
+}
+
+.cartBadge {
+  margin-left: auto;
+  padding: 0.5rem 1.25rem;
+  background: rgba(0, 229, 255, 0.1);
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  border-radius: 100px;
+  font-size: 0.85rem;
+  color: var(--accent-blue);
+  font-weight: 600;
+}
+
+/* ─── Grid ─── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 2rem;
+}
+
+/* ─── Card ─── */
+.card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), border-color var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 85, 0, 0.25);
+}
+
+/* ─── Product Tag ─── */
+.tag {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 0.3rem 0.8rem;
+  border-radius: 100px;
+  z-index: 2;
+}
+
+.tag_orange { background: rgba(255, 85, 0, 0.15); color: var(--accent-orange); border: 1px solid rgba(255, 85, 0, 0.3); }
+.tag_blue   { background: rgba(0, 229, 255, 0.1);  color: var(--accent-blue); border: 1px solid rgba(0, 229, 255, 0.3); }
+.tag_green  { background: rgba(0, 210, 120, 0.1);  color: #00d278; border: 1px solid rgba(0, 210, 120, 0.3); }
+.tag_purple { background: rgba(160, 0, 255, 0.1);  color: #c264ff; border: 1px solid rgba(160, 0, 255, 0.3); }
+
+/* ─── Image ─── */
+.imageWrapper {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover .image {
+  transform: scale(1.08);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+.quickView {
+  padding: 0.65rem 1.5rem;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: background var(--transition-fast);
+}
+
+.quickView:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* ─── Info ─── */
+.info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex: 1;
+}
+
+.category {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent-blue);
+  font-weight: 600;
+}
+
+.productName {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+}
+
+.description {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  flex: 1;
+}
+
+/* ─── Rating ─── */
+.ratingRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.stars {
+  color: #fbbf24;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.ratingNum {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.reviewCount {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+/* ─── Price Row ─── */
+.priceRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--glass-border);
+}
+
+.prices {
+  display: flex;
+  flex-direction: column;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: var(--font-header);
+}
+
+.originalPrice {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-decoration: line-through;
+}
+
+.addBtn {
+  padding: 0.65rem 1.3rem;
+  background: var(--accent-orange);
+  color: #000;
+  font-weight: 700;
+  font-size: 0.8rem;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all var(--transition-fast);
+}
+
+.addBtn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(255, 85, 0, 0.4);
+}
+
+.addedBtn {
+  background: rgba(0, 210, 120, 0.15);
+  color: #00d278;
+  border: 1px solid rgba(0, 210, 120, 0.4);
+}
+
+.addedBtn:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .title { font-size: 2.2rem; }
+  .grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+}
+
+@media (max-width: 480px) {
+  .grid { grid-template-columns: 1fr; }
+}

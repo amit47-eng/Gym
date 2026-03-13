@@ -1,8 +1,8 @@
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Services from '@/components/Services';
-import Trainers from '@/components/Trainers';
 import KnowMore from '@/components/KnowMore';
+import Trainers from '@/components/Trainers';
 
 export default function Home() {
   return (
@@ -15,5 +15,4 @@ export default function Home() {
     </main>
   );
 }
-
 

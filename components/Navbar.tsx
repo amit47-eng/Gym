@@ -30,8 +30,8 @@ export default function Navbar() {
       <nav className={`${styles.nav} ${mobileMenuOpen ? styles.navOpen : ''}`}>
         <Link href="/" className={styles.navLink} onClick={() => setMobileMenuOpen(false)}>Home</Link>
         <Link href="/products" className={styles.navLink} onClick={() => setMobileMenuOpen(false)}>Products</Link>
-        <Link href="/company" className={styles.navLink} onClick={() => setMobileMenuOpen(false)}>Company</Link>
-        <Link href="/our-work" className={styles.navLink} onClick={() => setMobileMenuOpen(false)}>Our Work</Link>
+        <Link href="/membership" className={styles.navLink} onClick={() => setMobileMenuOpen(false)}>Membership</Link>
+        <Link href="/services" className={styles.navLink} onClick={() => setMobileMenuOpen(false)}>Services</Link>
         <button className={`${styles.contactBtn} ${styles.mobileContactBtn}`}>Contact Us</button>
       </nav>
 

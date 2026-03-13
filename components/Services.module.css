@@ -82,6 +82,26 @@
   line-height: 1.6;
 }
 
+.cardArrow {
+  display: inline-block;
+  margin-top: 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-orange);
+  letter-spacing: 0.5px;
+  transition: transform var(--transition-fast);
+}
+
+.cardLink {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.cardLink:hover .cardArrow {
+  transform: translateX(6px);
+}
+
 @media (max-width: 768px) {
   .title {
     font-size: 2.2rem;
